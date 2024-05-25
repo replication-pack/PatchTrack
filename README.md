@@ -1,7 +1,7 @@
 # PatchTrack
 
 ## Introduction
-`PatchTrack`: Enhancing Software Patch Decision-Making in Pull Requests Using ChatGPT. This tool relies on clone detection to mine cases of missed opportunity and effort duplication from a pool of patches.
+`PatchTrack`: Enhancing Software Patch Decision-Making in Pull Requests Using ChatGPT. This tool relies on clone detection to determine whether patches were applied, not applied, or not suggested by ChatGPT during ChatGPT-Developer conversation.
 
 ## Directory Structure
 ```
@@ -32,7 +32,13 @@ The easiest way is using the `git clone` command:
 ```bash
 git clone https://github.com/replication-pack/PatchTrack.git
 ```
-
+### Minimum System Requirements
+- `Operating System`: Mac0SX, Linux, Windows
+- `RAM`: >= 4 GB
+- `Storage`: >= 1 GB
+- `Processor`: CPU 1.18 GHz
+#### Other tools
+- Git, Python3.11
 ### Python Virtual Environment
 let's set python virtual environment;
 
@@ -63,11 +69,12 @@ Now, let us install the dependencies and load the required datasets
 ```bash
 python PatchTrack.py --init
 ```
-Note: `PatchTrack` has been tested on `python >= 3.7`
+The above command will install all the required packages, set directories and unzip datasets for the smooth execution of the tool.
+Note: `PatchTrack` has been tested on `python >= 3.11`
 
 ## Running the tool
 ### Notebooks
-This is the easiest approach to test the tool. In the `notebooks` directory, simply run the `run_experiment.ipynd` file. 
+This is the easiest approach to test the tool. In the `notebooks` directory, simply run the `run_experiment.ipynb` file. 
 ### Console
 
 ### List of Commands
