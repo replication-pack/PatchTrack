@@ -1,4 +1,4 @@
-# PatchTrack
+# PatchTrack: Enhancing Software Patch Decision-Making in Pull Requests Using ChatGPT
 
 ## Introduction
 `PatchTrack`: Enhancing Software Patch Decision-Making in Pull Requests Using ChatGPT. This tool relies on clone detection to determine whether patches were applied, not applied, or not suggested by ChatGPT during ChatGPT-Developer conversation.
