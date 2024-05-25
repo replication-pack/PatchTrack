@@ -36,9 +36,9 @@ git clone https://github.com/replication-pack/PatchTrack.git
 - `Operating System`: Mac0SX, Linux, Windows
 - `RAM`: >= 4 GB
 - `Storage`: >= 1 GB
-- `Processor`: CPU 1.18 GHz
+- `Processor`: CPU 1.18 GHz or greater
 #### Other tools
-- Git, Python3.11
+- Git, Python >= 3.11
 ### Python Virtual Environment
 let's set python virtual environment;
 
@@ -64,7 +64,7 @@ chmod +x os-package.sh
 The above code will automatically detect the OS (Linux or MacOS X) and install the libraries.
 Before installing development specific dependencies.
 
-Now, let us install the dependencies and load the required datasets
+Datasets are stored in the `dataprep` directory in zipped files. This will be automatically extracted and placed in the right directory using the step below. Now, let us install the dependencies and load the required datasets.
 
 ```bash
 python PatchTrack.py --init
