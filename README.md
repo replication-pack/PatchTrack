@@ -32,16 +32,9 @@ The easiest way is using the `git clone` command:
 ```bash
 git clone https://github.com/replication-pack/PatchTrack.git
 ```
-### Dependencies
-`PatchTrack` consist of two categories of depencies i.e. (i) OS specific dependencies and (ii) development dependencies. The OS specific dependency is `libmagic`. To install this dependency on `Ubuntu/Debian` or `MacOS X`, run the shell script in the `bin` directory.
 
-```bash
-cd bin/
-chmod +x script.sh
-./script.sh
-```
-The above code will automatically detect the OS (Linux or MacOS X) and install the libraries.
-Before installing development specific dependencies, let's set python virtual environment;
+### Python Virtual Environment
+let's set python virtual environment;
 
 ```bash
 cd PatchTrack/
@@ -53,12 +46,49 @@ Activate the virtual environment
 ```bash
 source venv/bin/activate
 ```
+### Dependencies and Dataset
 
-Now, let us install the dependencies
+`PatchTrack` consist of two categories of depencies i.e. (i) OS specific dependencies and (ii) development dependencies. The OS specific dependency is `libmagic`. To dependencis will be installed automatically when you start the tool. You can also install manually on `Ubuntu/Debian` or `MacOS X`, by runing the shell script in the `bin` directory.
 
 ```bash
-pip install -r requirements.txt
+cd bin/
+chmod +x os-package.sh
+./os-package.sh
+```
+The above code will automatically detect the OS (Linux or MacOS X) and install the libraries.
+Before installing development specific dependencies.
+
+Now, let us install the dependencies and load the required datasets
+
+```bash
+python PatchTrack.py --init
 ```
 Note: `PatchTrack` has been tested on `python >= 3.7`
 
+## Running the tool
+### Notebooks
+This is the easiest approach to test the tool. In the `notebooks` directory, simply run the `run_experiment.ipynd` file. 
+### Console
 
+### List of Commands
+Information of the other command line options are provided by using `-h` or `--help`
+```
+usage: PatchTrack.py [-h] [-i] [-n NUM] [-c NUM] [-v] [-p STR] [-s SOURCE_PATH] [-r]
+
+options:
+  -h, --help            show this help message and exit
+  -i, --init            setup required datasets and directories. This command should be executed at least once
+  -n NUM, --ngram NUM   use n-gram of NUM lines (default: 1)
+  -c NUM, --context NUM
+                        print NUM lines of context (default: 10)
+  -v, --verbose         enable verbose mode (default: False)
+  -p STR, --patch_path STR
+                        path to ChatGPT and PR patch files (default: data/patches)
+  -s SOURCE_PATH, --source_path SOURCE_PATH
+                        path to json files of extracted ChatGPT conversations and code snippets (default: data/extracted)
+  -r, --restore         restore default setting, files and directories
+```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
