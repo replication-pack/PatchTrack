@@ -111,5 +111,4 @@ options:
 ```
 
 ## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+This repository is MIT licensed. See the [LICENSE](./LICENSE) file for more information.
