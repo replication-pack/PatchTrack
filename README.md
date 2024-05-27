@@ -1,27 +1,41 @@
 # PatchTrack: Enhancing Software Patch Decision-Making in Pull Requests Using ChatGPT
 
-## Introduction
-`PatchTrack`: Enhancing Software Patch Decision-Making in Pull Requests Using ChatGPT. This tool relies on clone detection to determine whether patches were applied, not applied, or not suggested by ChatGPT during ChatGPT-Developer conversation.
+The utilization of Large Language Models (LLMs) in software development has increased significantly in recent years. However, understanding how conversational LLMs like ChatGPT can enhance collaborative software development remains limited, particularly in managing and integrating patches in pull requests. This study aims to address this gap by analyzing developers' shared ChatGPT conversations within merged GitHub pull requests. We curated a dataset comprising 464 ChatGPT-generated code snippets and 1,360 pull request patches from 183 pull requests. We then developed a tool, `PatchTrack`, to detect whether patches were applied, not applied, or not suggested by ChatGPT.
 
-## Directory Structure
+## Directory Structure and Description
 ```
 .
-├── LICENSE
-├── README.md
-├── docs
-├── mkdocs.yml
-├── requirements.txt
-├── tokens-example.txt
-├── PatchTrack.py
-├── src
-│   ├── bin
-│   ├── constants
-│   ├── core
-│   ├── utils
-│   ├── legacy
-│   ├── notebooks
-│   └── tests
-└── 
+├── LICENSE                     # The License for the tool - MIT License
+├── PatchTrack.py               # Main entrypoint of the tool
+├── README.md                   # Readme file to describe how the tool work
+├── RQ1_2_3                     # Contains all the results for RQ1, RQ2 and RQ3
+├── analyzer                    # Directory for core modules of the tool   
+│   ├── __init__.py
+│   ├── analysis.py             # Plotting the classification result
+│   ├── classifier.py           # Classifies the dataset as PA, PN or NE
+│   ├── common.py               # Setting n-grams, file types, etc
+│   ├── constant.py             # All the constant variables used in the tool   
+│   ├── dataDict.py             # Keep track of extracted pr-project-pair information 
+│   ├── helpers.py              # All helper functions e.g. api requests, normalization, etc.
+│   ├── main.py                 # Main PatchTrack class
+│   ├── patchLoader.py          # Parse and tokenize PR patches. The file should be a diff format
+│   ├── sourceLoader.py         # Parse and tokenize ChatGPT code snippet
+│   └── totals.py               # Compute total number of PA, PN or NE classified
+├── bin                         
+│   └── os-packages.sh          # OS-specific dependencies 
+├── dataprep                    
+│   ├── __init__.py
+│   ├── allPullRequestSharings.zip    # DevGPT and Extended json dataset   
+│   ├── load.py                       # Functions for loading datasets
+│   ├── manual                        # Procedures on how to generate the extended dataset
+│   └── patches.zip                   # Extracted ChatGPT code snippest and PR patches
+├── notebooks                    # Notebooks containing code for running the experiments
+│   ├── __init__.py
+│   └── run_experiment.ipynb
+├── output                       # figures and csv files of all the results of running the tool
+├── requirements.txt             # List of python dependencies required by the tool
+├── tests                        # Testing different component of the tool. This is still a WIP
+└── tokens-example.txt           # Example token file. This should be renamed to `tokens.txt`
 ```
 
 ## Setting up 
