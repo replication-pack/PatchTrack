@@ -68,15 +68,7 @@ source venv/bin/activate
 ```
 ### Dependencies and Dataset
 
-`PatchTrack` consist of two categories of depencies i.e. (i) OS specific dependencies and (ii) development dependencies. The OS specific dependency is `libmagic`. To dependencis will be installed automatically when you start the tool. You can also install manually on `Ubuntu/Debian` or `MacOS X`, by runing the shell script in the `bin` directory.
-
-```bash
-cd bin/
-chmod +x os-package.sh
-./os-package.sh
-```
-The above code will automatically detect the OS (Linux or MacOS X) and install the libraries.
-Before installing development specific dependencies.
+`PatchTrack` consist of two categories of depencies i.e. (i) OS specific dependencies and (ii) development dependencies. The OS specific dependency is `libmagic`. To dependencis will be installed automatically when you start the tool.  
 
 Datasets are stored in the `dataprep` directory in zipped files. This will be automatically extracted and placed in the right directory using the step below. Now, let us install the dependencies and load the required datasets.
 
@@ -85,6 +77,15 @@ python PatchTrack.py --init
 ```
 The above command will install all the required packages, set directories and unzip datasets for the smooth execution of the tool.
 Note: `PatchTrack` has been tested on `python >= 3.11`
+
+You can also install manually on `Ubuntu/Debian` or `MacOS X`, by runing the shell script in the `bin` directory.
+
+```bash
+cd bin/
+chmod +x os-package.sh
+./os-package.sh
+```
+The above code will automatically detect the OS (Linux or MacOS X) and install the libraries. Note: This is required before installing development specific dependencies.
 
 ## Running the tool
 ### Notebooks
