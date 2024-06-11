@@ -78,7 +78,7 @@ python PatchTrack.py --init
 The above command will install all the required packages, set directories and unzip datasets for the smooth execution of the tool.
 Note: `PatchTrack` has been tested on `python >= 3.10`
 
-You can also install manually on `Ubuntu/Debian` or `MacOS X`, by runing the shell script in the `bin` directory.
+You can also install the OS-specific libraries manually on `Ubuntu/Debian` or `MacOS X`, by runing the shell script in the `bin` directory.
 
 ```bash
 cd bin/
@@ -89,9 +89,9 @@ The above code will automatically detect the OS (Linux or MacOS X) and install t
 
 ## Running the tool
 ### Notebook - Reproducing the results
-This is the easiest approach to test the tool and **reproduce the classification results in presented in the paper**. In the `notebooks` directory, simply run the `run_experiment.ipynb` file. 
+This is the easiest approach to test the tool and **reproduce the classification results presented in the paper**. In the `notebooks` directory, simply run the `run_experiment.ipynb` file. 
 ### Console
-
+If you wish to play with `PatchTrack`, there are a number of command line arguments for configuring different part of the tool. Some of those option are actively being improved. We are developing a comprehensive documentation of the tool which will be uploaded soon.
 ### List of Commands
 Information of the other command line options are provided by using `-h` or `--help`
 ```
