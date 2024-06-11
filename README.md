@@ -35,7 +35,7 @@ The utilization of Large Language Models (LLMs) in software development has incr
 ├── output                       # figures and csv files of all the results of running the tool
 ├── requirements.txt             # List of python dependencies required by the tool
 ├── tests                        # Testing different component of the tool. This is still a WIP
-└── tokens-example.txt           # Example token file. This should be renamed to `tokens.txt`
+└── tokens-example.txt           # Example file containing GitHub API tokens seperated by a comma (,). This should be renamed to `tokens.txt`
 ```
 
 ## Setting up 
@@ -52,9 +52,9 @@ git clone https://github.com/replication-pack/PatchTrack.git
 - `Storage`: >= 1 GB
 - `Processor`: CPU 1.18 GHz or greater
 #### Other tools
-- Git, Python >= 3.11
+- Git, Python >= 3.10
 ### Python Virtual Environment
-let's set python virtual environment;
+Let's set python virtual environment;
 
 ```bash
 cd PatchTrack/
@@ -76,7 +76,7 @@ Datasets are stored in the `dataprep` directory in zipped files. This will be au
 python PatchTrack.py --init
 ```
 The above command will install all the required packages, set directories and unzip datasets for the smooth execution of the tool.
-Note: `PatchTrack` has been tested on `python >= 3.11`
+Note: `PatchTrack` has been tested on `python >= 3.10`
 
 You can also install manually on `Ubuntu/Debian` or `MacOS X`, by runing the shell script in the `bin` directory.
 
@@ -88,8 +88,8 @@ chmod +x os-package.sh
 The above code will automatically detect the OS (Linux or MacOS X) and install the libraries. Note: This is required before installing development specific dependencies.
 
 ## Running the tool
-### Notebooks
-This is the easiest approach to test the tool. In the `notebooks` directory, simply run the `run_experiment.ipynb` file. 
+### Notebook - Reproducing the results
+This is the easiest approach to test the tool and **reproduce the classification results in presented in the paper**. In the `notebooks` directory, simply run the `run_experiment.ipynb` file. 
 ### Console
 
 ### List of Commands
@@ -110,6 +110,7 @@ options:
                         path to json files of extracted ChatGPT conversations and code snippets (default: data/extracted)
   -r, --restore         restore default setting, files and directories
 ```
-
+### GitHub Tokens
+We use [GitHub tokens](https://github.com/settings/tokens) when extracting PR patches. This allows for higher rate limit because of the high number of requests to the GitHub API. Tokens can be set in the `tokens.txt` file seperated by a comman. The user can add as many tokens as needed. A minimal of 2 tokens can be used to safely execute code and to make sure that the rate limit is not reached for a token.
 ## License
 This repository is MIT licensed. See the [LICENSE](./LICENSE) file for more information.
