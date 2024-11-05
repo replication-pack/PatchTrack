@@ -1,4 +1,4 @@
-# PatchTrack: Analyzing ChatGPT's Impact on Software Patch Decision-Making in Pull Requests
+# PatchTrack: A Comprehensive Analysis of ChatGPT’s Impact on Software Patch Decision-Making in Pull Requests
 
 The utilization of Large Language Models (LLMs) in software development has increased significantly in recent years. However, understanding how conversational LLMs like ChatGPT can enhance collaborative software development remains limited, particularly in managing and integrating patches in pull requests. This study aims to address this gap by analyzing developers' shared ChatGPT conversations within merged GitHub pull requests. We curated a dataset comprising 464 ChatGPT-generated code snippets and 1,360 pull request patches from 183 pull requests. We then developed a tool, `PatchTrack`, to detect whether patches were applied, not applied, or not suggested by ChatGPT.
 
